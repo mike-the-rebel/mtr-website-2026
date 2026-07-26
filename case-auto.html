@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M5HVZM4V');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automotive Brands & Workshops · Mike Moreno</title>
+<link rel="icon" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css">
+<link rel="stylesheet" href="styles/case-study.css">
+<style>
+.auto-holding {
+  min-height: 90vh;
+  background: linear-gradient(155deg,#0d1218 0%, #060809 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  text-align: center; padding: 8rem 3rem 4rem;
+}
+.auto-texture {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 40% 40%, rgba(56,189,248,0.22) 0%, transparent 55%),
+              radial-gradient(ellipse at 80% 20%, rgba(14,165,233,0.15) 0%, transparent 50%),
+              radial-gradient(ellipse at 20% 80%, rgba(2,132,199,0.12) 0%, transparent 50%);
+}
+.auto-inner { position: relative; z-index: 2; max-width: 720px; }
+.auto-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  background: rgba(56,189,248,0.15); color: #38bdf8;
+  padding: 0.4rem 1rem; border-radius: 2px;
+  border: 1px solid rgba(56,189,248,0.25);
+  margin-bottom: 2rem;
+}
+.auto-headline {
+  font-family: var(--bio);
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  color: var(--white); line-height: 0.98;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+}
+.auto-headline .accent { color: #38bdf8; }
+.auto-sub {
+  font-size: 1.08rem; font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  max-width: 520px; margin: 0 auto 2.5rem;
+  line-height: 1.75;
+}
+.auto-tags {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;
+}
+.auto-tag {
+  font-size: 0.64rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.5);
+  padding: 0.35rem 0.8rem; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* TEASER SECTIONS */
+.auto-teaser {
+  background: var(--page-bg);
+  padding: 6rem 3rem;
+  border-top: 1px solid var(--hairline);
+}
+.auto-teaser-inner {
+  max-width: 700px; margin: 0 auto; text-align: center;
+}
+.auto-teaser-label {
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: #38bdf8; margin-bottom: 1.5rem;
+}
+.auto-teaser-headline {
+  font-family: var(--bio);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--fg); line-height: 1.05;
+  letter-spacing: -0.015em; margin-bottom: 1.5rem;
+}
+.auto-teaser-body {
+  font-size: 1rem; font-weight: 300;
+  color: var(--fg-muted); line-height: 1.85;
+}
+
+.auto-scope {
+  background: var(--page-bg-alt);
+  padding: 5rem 3rem;
+  border-top: 1px solid var(--hairline);
+}
+.auto-scope-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--hairline); max-width: 900px; margin: 3rem auto 0;
+}
+.auto-scope-item {
+  background: var(--page-bg);
+  padding: 2rem 1.75rem;
+}
+.auto-scope-num {
+  font-family: var(--bio);
+  font-size: 2rem; color: rgba(56,189,248,0.25);
+  margin-bottom: 0.5rem; letter-spacing: -0.02em;
+}
+.auto-scope-name {
+  font-family: var(--bio);
+  font-size: 1.1rem; color: var(--fg);
+  margin-bottom: 0.5rem;
+}
+.auto-scope-desc {
+  font-size: 0.85rem; font-weight: 300;
+  color: var(--fg-muted); line-height: 1.7;
+}
+
+/* EOI FORM */
+.auto-eoi {
+  background: var(--surface-dark);
+  padding: 6rem 3rem;
+  text-align: center;
+}
+.auto-eoi-inner { max-width: 520px; margin: 0 auto; }
+.auto-eoi-headline {
+  font-family: var(--bio);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--white); line-height: 1.1;
+  letter-spacing: -0.015em; margin-bottom: 1.25rem;
+}
+.auto-eoi-headline .accent { color: #38bdf8; }
+.auto-eoi-body {
+  font-size: 0.98rem; font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75; margin-bottom: 2.25rem;
+}
+.auto-eoi-cta {
+  display: inline-block;
+  background: #38bdf8; color: #0c1a26;
+  font-family: var(--sans); font-size: 0.78rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 1rem 2.25rem; border-radius: 2px;
+  text-decoration: none; transition: background 0.2s;
+}
+.auto-eoi-cta:hover { background: #7dd3fc; }
+.auto-eoi-note {
+  margin-top: 1.25rem;
+  font-size: 0.72rem; color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 860px) {
+  .auto-scope-grid { grid-template-columns: 1fr; }
+  .auto-teaser, .auto-scope, .auto-eoi { padding: 4rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5HVZM4V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="nav-slot"></div>
+
+<!-- HERO -->
+<section class="auto-holding">
+  <div class="auto-texture"></div>
+  <div class="auto-inner">
+    <div class="auto-pill">Automotive Brands &amp; Workshops</div>
+    <h1 class="auto-headline">
+      Run an Automotive<br>
+      Brand or <span class="accent">Workshop?</span>
+    </h1>
+    <p class="auto-sub">I've spent time inside the automotive trade, helping a manufacturer sharpen how it shows up to distributors and customers. If you run a workshop, dealership, or parts brand that feels stuck or dated, I'd like to hear about it.</p>
+    <div class="auto-tags">
+      <span class="auto-tag">Brand Strategy</span>
+      <span class="auto-tag">Visual Identity</span>
+      <span class="auto-tag">Web Design</span>
+      <span class="auto-tag">Campaign Direction</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="auto-teaser reveal">
+  <div class="auto-teaser-inner">
+    <p class="auto-teaser-label">Why Automotive</p>
+    <h2 class="auto-teaser-headline">An industry built on legacy,<br>often light on <span class="accent">brand.</span></h2>
+    <p class="auto-teaser-body" style="max-width:56ch;margin:0 auto;">Automotive businesses tend to be excellent at the trade and underinvested in how they present it: dated catalogues, generic sites, brand systems nobody's touched in a decade. That gap is an opportunity. I've worked inside this space and understand its trade dynamics, its customers, and where the presentation usually falls short.</p>
+  </div>
+</section>
+
+<!-- SCOPE -->
+<section class="auto-scope reveal">
+  <div class="auto-teaser-inner" style="text-align:left; max-width:none;">
+    <p class="auto-teaser-label" style="text-align:center;">What I Can Help With</p>
+    <h2 class="auto-teaser-headline" style="text-align:center;">Wherever the <span class="accent">gap</span> is.</h2>
+  </div>
+  <div class="auto-scope-grid">
+    <div class="auto-scope-item">
+      <div class="auto-scope-num">01</div>
+      <div class="auto-scope-name">Brand Positioning</div>
+      <div class="auto-scope-desc">Clarifying who you're for and how you stand apart from every other shop or supplier in your area.</div>
+    </div>
+    <div class="auto-scope-item">
+      <div class="auto-scope-num">02</div>
+      <div class="auto-scope-name">Visual Identity</div>
+      <div class="auto-scope-desc">Wordmark, colour system, signage, and materials that look as capable as the work you actually do.</div>
+    </div>
+    <div class="auto-scope-item">
+      <div class="auto-scope-num">03</div>
+      <div class="auto-scope-name">Web &amp; Campaigns</div>
+      <div class="auto-scope-desc">A site and promotional materials built to convert trade or retail traffic, not just sit online.</div>
+    </div>
+  </div>
+</section>
+
+<!-- EOI -->
+<section class="auto-eoi reveal">
+  <div class="auto-eoi-inner">
+    <p class="sec-label" style="justify-content:center;">Express Interest</p>
+    <h2 class="auto-eoi-headline" style="margin-top:1rem;">Let's see if it's<br>a good <span class="accent">fit.</span></h2>
+    <p class="auto-eoi-body">Send a quick note about your business and what's not working, and I'll reply personally within a few days.</p>
+    <a href="mailto:hello@miketherebel.com?subject=Automotive%20Project%20Enquiry" class="auto-eoi-cta">Email Me About Your Project →</a>
+    <p class="auto-eoi-note">hello@miketherebel.com</p>
+  </div>
+</section>
+
+<div class="cs-next" style="border-top: none;">
+  <a href="case-mile-high.html" class="cs-next-inner">
+    <span class="cs-next-label">Back to First Case →</span>
+    <h2 class="cs-next-title">Mile High Coffee Club</h2>
+    <div class="cs-next-bg" style="background:linear-gradient(155deg,#2d1c0a,#0e0904)"></div>
+    <div class="cs-next-texture" style="background:radial-gradient(ellipse at 25% 35%, rgba(217,95,32,0.38) 0%, transparent 55%)"></div>
+  </a>
+</div>
+
+<div id="footer-slot"></div>
+<script src="scripts/chrome.js"></script>
+<script>MTR.injectChrome({ onDark: false });</script>
+</body>
+</html>

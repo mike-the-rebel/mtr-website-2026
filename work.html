@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M5HVZM4V');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work · Mike the Rebel</title>
+<link rel="icon" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css">
+<style>
+/* ── WORK INDEX HERO ── */
+.wi-hero {
+  min-height: 52vh;
+  background: var(--surface-dark);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 9rem 3rem 4rem;
+  position: relative; overflow: hidden;
+}
+.wi-hero-ghost {
+  position: absolute; right: -1rem; bottom: -4rem;
+  font-family: var(--bio); font-size: 22vw;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none; line-height: 1;
+  user-select: none; white-space: nowrap;
+  letter-spacing: -0.03em;
+}
+.wi-hero-inner { position: relative; z-index: 2; max-width: 800px; }
+.wi-headline {
+  font-family: var(--bio);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  color: var(--white); line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-top: 1.25rem;
+}
+.wi-sub {
+  font-size: 1.05rem; font-weight: 300;
+  color: rgba(255,255,255,0.48);
+  max-width: 480px; margin-top: 1.5rem; line-height: 1.75;
+}
+
+/* ── PROJECT GRID ── */
+.projects-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 2px; background: var(--hairline);
+  margin: 0;
+}
+.project-card {
+  position: relative; overflow: hidden;
+  text-decoration: none;
+  aspect-ratio: 4/3;
+  display: flex; align-items: flex-end;
+  background: var(--surface-dark2);
+}
+.project-card-bg {
+  position: absolute; inset: 0;
+  transition: transform 0.6s ease;
+}
+.project-card-texture {
+  position: absolute; inset: 0;
+  transition: transform 0.6s ease, opacity 0.3s;
+}
+.project-card:hover .project-card-bg,
+.project-card:hover .project-card-texture { transform: scale(1.04); }
+.project-card-accent {
+  position: absolute; top: 1.5rem; left: 1.5rem;
+  width: 36px; height: 3px; border-radius: 2px;
+  z-index: 3;
+}
+.project-card-num {
+  position: absolute; top: 1.5rem; right: 1.75rem;
+  font-family: var(--bio);
+  font-size: 0.7rem; color: rgba(255,255,255,0.2);
+  letter-spacing: 0.12em; z-index: 3;
+}
+.project-card-info {
+  position: relative; z-index: 2; width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+}
+.project-card-tag {
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255,255,255,0.42); margin-bottom: 0.5rem;
+}
+.project-card-title {
+  font-family: var(--bio);
+  font-size: 1.75rem; color: var(--white);
+  line-height: 1.1; letter-spacing: -0.01em;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+}
+.project-card-arrow {
+  opacity: 0.45; font-size: 1.4rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.project-card:hover .project-card-arrow { opacity: 1; transform: translateX(5px); }
+.project-card-status {
+  display: inline-block; margin-top: 0.75rem;
+  font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6);
+  padding: 0.25rem 0.6rem; border-radius: 2px;
+}
+
+/* ── CTA ROW ── */
+.work-cta-row {
+  background: var(--page-bg);
+  padding: 6rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 3rem;
+  border-top: 1px solid var(--hairline);
+}
+.work-cta-copy {
+  font-family: var(--bio);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--fg); line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.work-cta-copy .accent { color: var(--orange); }
+
+@media (max-width: 860px) {
+  .wi-hero { padding: 8rem 1.5rem 3rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card { aspect-ratio: 16/9; }
+  .work-cta-row { flex-direction: column; align-items: flex-start; padding: 4rem 1.5rem; gap: 2rem; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5HVZM4V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="nav-slot"></div>
+
+<!-- HERO -->
+<section class="wi-hero on-dark">
+  <div class="wi-hero-ghost">WORK</div>
+  <div class="wi-hero-inner">
+    <p class="sec-label">Selected Work</p>
+    <h1 class="wi-headline">
+      Brands Built<br>
+      to <span class="accent">Move.</span>
+    </h1>
+    <p class="wi-sub">A collection of brand systems, identities, and digital experiences built for founder-led businesses ready to stand out.</p>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+
+<!-- PROJECTS -->
+<div class="projects-grid" id="projects-grid">
+
+  <a href="case-adulting-candle.html" class="project-card">
+    <div class="project-card-bg" style="background-image:url('assets/case-studies/Adulting Candle/gallery-1.jpg');background-size:cover;background-position:center 30%;"></div>
+    <div class="project-card-texture" style="background: linear-gradient(to top, rgba(20,10,30,0.7) 0%, rgba(20,10,30,0.1) 55%, transparent 100%);"></div>
+    <div class="project-card-accent" style="background:#7c3aed"></div>
+    <div class="project-card-num">01</div>
+    <div class="project-card-info">
+      <div class="project-card-tag">Brand Identity · Packaging · Social</div>
+      <div class="project-card-title">Adulting Candle Co <span class="project-card-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="case-mile-high.html" class="project-card">
+    <div class="project-card-bg" style="background-image:url('assets/case-studies/mile-high/hero.jpg');background-size:cover;background-position:center;"></div>
+    <div class="project-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
+    <div class="project-card-accent" style="background:#d95f20"></div>
+    <div class="project-card-num">02</div>
+    <div class="project-card-info">
+      <div class="project-card-tag">Brand Identity · Packaging · Strategy</div>
+      <div class="project-card-title">Mile High Coffee Club <span class="project-card-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="case-mood-hair.html" class="project-card">
+    <div class="project-card-bg" style="background-image:url('assets/case-studies/mood-hair/hero.jpg');background-size:cover;background-position:center;"></div>
+    <div class="project-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
+    <div class="project-card-accent" style="background:#dba0b8"></div>
+    <div class="project-card-num">03</div>
+    <div class="project-card-info">
+      <div class="project-card-tag">Visual Identity · Merchandise · Web</div>
+      <div class="project-card-title">Mood Hair Studio <span class="project-card-arrow">→</span></div>
+    </div>
+  </a>
+
+
+</div>
+
+<!-- CTA -->
+<div class="work-cta-row reveal">
+  <p class="work-cta-copy">
+    Your brand next?<br>
+    Let's <span class="accent">make waves.</span>
+  </p>
+  <a href="mailto:hello@miketherebel.com" class="btn btn-primary">Get in Touch →</a>
+</div>
+
+<div id="footer-slot"></div>
+<script src="scripts/chrome.js"></script>
+<script>
+  MTR.injectChrome({ onDark: false });
+</script>
+</body>
+</html>

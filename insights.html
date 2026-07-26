@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M5HVZM4V');</script>
+<!-- End Google Tag Manager -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights — Mike the Rebel</title>
+<link rel="icon" href="assets/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/site.css">
+<style>
+/* ── INSIGHTS HERO ── */
+.ins-hero {
+  min-height: 55vh;
+  background: var(--surface-dark);
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 9rem 3rem 4.5rem;
+  position: relative; overflow: hidden;
+}
+.ins-hero-ghost {
+  position: absolute; right: -2rem; bottom: -5rem;
+  font-family: var(--bio); font-size: 24vw;
+  color: rgba(255,255,255,0.025);
+  pointer-events: none; line-height: 1;
+  user-select: none; white-space: nowrap;
+  letter-spacing: -0.04em;
+}
+.ins-hero-inner { position: relative; z-index: 2; }
+.ins-headline {
+  font-family: var(--bio);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  color: var(--white); line-height: 0.95;
+  letter-spacing: -0.025em;
+  margin-top: 1.25rem; margin-bottom: 1.5rem;
+}
+.ins-sub {
+  font-size: 1.05rem; font-weight: 300;
+  color: rgba(255,255,255,0.48);
+  max-width: 520px; line-height: 1.75;
+}
+.ins-filter-row {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 2.5rem;
+}
+.ins-filter-pill {
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 0.38rem 0.9rem; border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.45); background: transparent;
+  cursor: pointer; transition: all 0.2s;
+}
+.ins-filter-pill:hover, .ins-filter-pill.active {
+  background: var(--orange); border-color: var(--orange);
+  color: var(--white);
+}
+
+/* ── FEATURED POST ── */
+.ins-featured {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  border-bottom: 1px solid var(--hairline);
+}
+.ins-featured-visual {
+  min-height: 520px;
+  position: relative; overflow: hidden;
+  background: var(--surface-dark2);
+}
+.ins-featured-bg, .ins-featured-texture { position: absolute; inset: 0; }
+.ins-featured-meta {
+  position: absolute; top: 2rem; left: 2rem; z-index: 2;
+  display: flex; gap: 0.5rem; align-items: center;
+}
+.ins-featured-tag {
+  font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  background: var(--orange); color: white;
+  padding: 0.3rem 0.7rem; border-radius: 2px;
+}
+.ins-featured-time {
+  font-size: 0.62rem; font-weight: 500;
+  color: rgba(255,255,255,0.4); letter-spacing: 0.1em;
+}
+.ins-featured-info {
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3.5rem;
+  background: var(--page-bg);
+  border-left: 1px solid var(--hairline);
+}
+.ins-featured-date {
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 1.25rem;
+}
+.ins-featured-title {
+  font-family: var(--bio);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--fg); line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.25rem;
+  text-decoration: none; display: block;
+}
+.ins-featured-title:hover { color: var(--orange); }
+.ins-featured-excerpt {
+  font-size: 0.95rem; font-weight: 300;
+  color: var(--fg-muted); line-height: 1.85;
+  margin-bottom: 2rem;
+}
+.ins-read-link {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--orange); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: gap 0.2s;
+}
+.ins-read-link:hover { gap: 0.85rem; }
+
+/* ── POST GRID ── */
+.ins-grid-label {
+  padding: 2.5rem 3rem 1.25rem;
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--fg-muted);
+  border-bottom: 1px solid var(--hairline);
+  background: var(--page-bg);
+}
+.ins-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: var(--hairline);
+}
+.ins-card {
+  background: var(--page-bg);
+  padding: 2.25rem 2rem;
+  text-decoration: none; display: flex;
+  flex-direction: column;
+  transition: background 0.2s;
+  min-height: 300px;
+}
+.ins-card:hover { background: var(--page-bg-alt); }
+.ins-card-visual {
+  width: 100%; height: 160px;
+  border-radius: 2px; overflow: hidden;
+  margin-bottom: 1.5rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.ins-card-visual-bg, .ins-card-visual-tex { position: absolute; inset: 0; }
+.ins-card-top {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 1rem;
+}
+.ins-card-tag {
+  font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--orange);
+}
+.ins-card-time {
+  font-size: 0.6rem; font-weight: 500;
+  letter-spacing: 0.1em; color: var(--fg-soft);
+}
+.ins-card-title {
+  font-family: var(--bio);
+  font-size: 1.3rem; color: var(--fg);
+  line-height: 1.15; letter-spacing: -0.01em;
+  margin-bottom: 0.75rem; flex: 1;
+}
+.ins-card-excerpt {
+  font-size: 0.86rem; font-weight: 300;
+  color: var(--fg-muted); line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+.ins-card-read {
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--orange);
+}
+
+/* ── NEWSLETTER ── */
+.ins-newsletter {
+  background: var(--black);
+  padding: 5rem 3rem;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 3rem;
+  border-top: 1px solid var(--hairline);
+}
+.ins-nl-copy h2 {
+  font-family: var(--bio);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  color: var(--white); line-height: 1.1;
+  letter-spacing: -0.015em; margin-top: 0.75rem;
+}
+.ins-nl-copy h2 .accent { color: var(--orange); }
+.ins-nl-copy p {
+  font-size: 0.9rem; font-weight: 300;
+  color: rgba(255,255,255,0.45); margin-top: 0.75rem;
+  line-height: 1.75; max-width: 360px;
+}
+.ins-nl-form {
+  display: flex; gap: 0; border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 2px; overflow: hidden;
+  min-width: 360px;
+}
+.ins-nl-form input {
+  flex: 1; background: rgba(255,255,255,0.04);
+  border: none; color: var(--white);
+  font-family: var(--sans); font-size: 0.9rem; font-weight: 300;
+  padding: 0.9rem 1.25rem; outline: none;
+}
+.ins-nl-form input::placeholder { color: rgba(255,255,255,0.3); }
+.ins-nl-form button {
+  background: var(--orange); color: white;
+  font-family: var(--sans); font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none; padding: 0.9rem 1.5rem;
+  cursor: pointer; white-space: nowrap;
+  transition: background 0.2s;
+}
+.ins-nl-form button:hover { background: var(--orange-dk); }
+
+@media (max-width: 860px) {
+  .ins-hero { padding: 8rem 1.5rem 3rem; }
+  .ins-featured { grid-template-columns: 1fr; }
+  .ins-featured-visual { min-height: 280px; }
+  .ins-featured-info { padding: 2.5rem 1.5rem; border-left: none; border-top: 1px solid var(--hairline); }
+  .ins-grid { grid-template-columns: 1fr; }
+  .ins-grid-label { padding: 2rem 1.5rem 1rem; }
+  .ins-newsletter { flex-direction: column; padding: 4rem 1.5rem; gap: 2.5rem; }
+  .ins-nl-form { min-width: 0; width: 100%; }
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5HVZM4V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="nav-slot"></div>
+
+<!-- HERO -->
+<section class="ins-hero on-dark">
+  <div class="ins-hero-ghost">NOTES</div>
+  <div class="ins-hero-inner">
+    <p class="sec-label">Rebel Notes</p>
+    <h1 class="ins-headline">Thoughts on<br>clarity, craft,<br>and <span class="accent">zagging.</span></h1>
+    <p class="ins-sub">Strategy essays, brand breakdowns, frameworks I actually use, and notes on what makes good businesses great.</p>
+    <div class="ins-filter-row">
+      <button class="ins-filter-pill active" onclick="filterPosts(this,'all')">All</button>
+      <button class="ins-filter-pill" onclick="filterPosts(this,'strategy')">Strategy</button>
+      <button class="ins-filter-pill" onclick="filterPosts(this,'design')">Design</button>
+      <button class="ins-filter-pill" onclick="filterPosts(this,'framework')">Frameworks</button>
+      <button class="ins-filter-pill" onclick="filterPosts(this,'behind-scenes')">Behind the Scenes</button>
+      <button class="ins-filter-pill" onclick="filterPosts(this,'notes')">Rebel Notes</button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<article class="ins-featured">
+  <div class="ins-featured-visual">
+    <div class="ins-featured-bg" style="background:linear-gradient(145deg,#1e1c08,#0a0900)"></div>
+    <div class="ins-featured-texture" style="background:radial-gradient(ellipse at 40% 40%, rgba(217,95,32,0.45) 0%, transparent 52%), radial-gradient(ellipse at 80% 75%, rgba(180,80,10,0.3) 0%, transparent 50%)"></div>
+    <div class="ins-featured-meta">
+      <span class="ins-featured-tag">Strategy</span>
+      <span class="ins-featured-time">8 min read</span>
+    </div>
+  </div>
+  <div class="ins-featured-info">
+    <p class="ins-featured-date">12 April 2026</p>
+    <a href="post-clarity-makes-money.html" class="ins-featured-title">Clarity makes you money. Confusion costs you everything.</a>
+    <p class="ins-featured-excerpt">Why the brands that feel "unfocused" are almost always leaving money on the table, and the three questions that expose it in under an hour. This is the framework I use in week one with every founder.</p>
+    <a href="post-clarity-makes-money.html" class="ins-read-link">Read the essay →</a>
+  </div>
+</article>
+
+<!-- POST GRID -->
+<div class="ins-grid-label">Recent Posts</div>
+<div class="ins-grid" id="ins-grid">
+
+  <a href="post-stop-making-logos.html" class="ins-card" data-category="design">
+    <div class="ins-card-visual">
+      <div class="ins-card-visual-bg" style="background:linear-gradient(145deg,#1e0f2a,#07040d)"></div>
+      <div class="ins-card-visual-tex" style="background:radial-gradient(ellipse at 60% 40%, rgba(192,132,252,0.45) 0%, transparent 55%)"></div>
+    </div>
+    <div class="ins-card-top">
+      <span class="ins-card-tag">Design</span>
+      <span class="ins-card-time">5 min · 2 Apr 2026</span>
+    </div>
+    <h3 class="ins-card-title">Stop making logos. Start making decisions.</h3>
+    <p class="ins-card-excerpt">A logo is a symptom, not a solution. Here's the work that has to come first.</p>
+    <span class="ins-card-read">Read →</span>
+  </a>
+
+  <a href="post-zag-framework.html" class="ins-card" data-category="framework">
+    <div class="ins-card-visual">
+      <div class="ins-card-visual-bg" style="background:linear-gradient(145deg,#0d1218,#060809)"></div>
+      <div class="ins-card-visual-tex" style="background:radial-gradient(ellipse at 40% 50%, rgba(56,189,248,0.38) 0%, transparent 55%)"></div>
+    </div>
+    <div class="ins-card-top">
+      <span class="ins-card-tag">Framework</span>
+      <span class="ins-card-time">6 min · 24 Mar 2026</span>
+    </div>
+    <h3 class="ins-card-title">The Zag Framework: find your angle when everyone looks the same.</h3>
+    <p class="ins-card-excerpt">Four prompts I use with every founder in week one. Steal them.</p>
+    <span class="ins-card-read">Read →</span>
+  </a>
+
+  <a href="#" class="ins-card" data-category="notes">
+    <div class="ins-card-visual">
+      <div class="ins-card-visual-bg" style="background:linear-gradient(145deg,#1a1a10,#0c0c08)"></div>
+      <div class="ins-card-visual-tex" style="background:radial-gradient(ellipse at 50% 40%, rgba(234,179,8,0.38) 0%, transparent 55%)"></div>
+    </div>
+    <div class="ins-card-top">
+      <span class="ins-card-tag">Rebel Note</span>
+      <span class="ins-card-time">3 min · 18 Mar 2026</span>
+    </div>
+    <h3 class="ins-card-title">The expensive mistake: confusing activity with momentum.</h3>
+    <p class="ins-card-excerpt">Posting every day is not a brand strategy. This is.</p>
+    <span class="ins-card-read">Read →</span>
+  </a>
+
+  <a href="#" class="ins-card" data-category="behind-scenes">
+    <div class="ins-card-visual">
+      <div class="ins-card-visual-bg" style="background:linear-gradient(145deg,#2d1c0a,#0e0904)"></div>
+      <div class="ins-card-visual-tex" style="background:radial-gradient(ellipse at 30% 50%, rgba(217,95,32,0.38) 0%, transparent 55%)"></div>
+    </div>
+    <div class="ins-card-top">
+      <span class="ins-card-tag">Behind the Scenes</span>
+      <span class="ins-card-time">9 min · 10 Mar 2026</span>
+    </div>
+    <h3 class="ins-card-title">How we rebuilt Mile High Coffee Club from the ground up in 6 weeks.</h3>
+    <p class="ins-card-excerpt">Process notes, decisions made, things I'd do differently. An honest account.</p>
+    <span class="ins-card-read">Read →</span>
+  </a>
+
+  <a href="#" class="ins-card" data-category="strategy">
+    <div class="ins-card-visual">
+      <div class="ins-card-visual-bg" style="background:linear-gradient(145deg,#121a12,#060c06)"></div>
+      <div class="ins-card-visual-tex" style="background:radial-gradient(ellipse at 60% 40%, rgba(74,222,128,0.3) 0%, transparent 55%)"></div>
+    </div>
+    <div class="ins-card-top">
+      <span class="ins-card-tag">Strategy</span>
+      <span class="ins-card-time">7 min · 2 Mar 2026</span>
+    </div>
+    <h3 class="ins-card-title">Why most founders rebrand at the wrong time (and what to do instead).</h3>
+    <p class="ins-card-excerpt">Rebranding is not a solution to a strategy problem. Here's how to know the difference.</p>
+    <span class="ins-card-read">Read →</span>
+  </a>
+
+  <a href="#" class="ins-card" data-category="notes">
+    <div class="ins-card-visual">
+      <div class="ins-card-visual-bg" style="background:linear-gradient(145deg,#1e0f2a,#07040d)"></div>
+      <div class="ins-card-visual-tex" style="background:radial-gradient(ellipse at 35% 60%, rgba(139,92,246,0.38) 0%, transparent 55%)"></div>
+    </div>
+    <div class="ins-card-top">
+      <span class="ins-card-tag">Rebel Note</span>
+      <span class="ins-card-time">4 min · 22 Feb 2026</span>
+    </div>
+    <h3 class="ins-card-title">On charging what you're worth without apologising for it.</h3>
+    <p class="ins-card-excerpt">A note to fellow creative operators who still feel weird about their rates.</p>
+    <span class="ins-card-read">Read →</span>
+  </a>
+
+</div>
+
+<!-- NEWSLETTER -->
+<section class="ins-newsletter reveal on-dark">
+  <div class="ins-nl-copy">
+    <p class="sec-label">The Rebel Letter</p>
+    <h2>Strategy in your inbox.<br>No <span class="accent">fluff.</span></h2>
+    <p>Fortnightly. Practical. Worth reading. Join 1,400+ founders and operators who get this.</p>
+  </div>
+  <div>
+    <div class="ins-nl-form">
+      <input type="email" placeholder="hello@yourbusiness.com" id="nl-email">
+      <button onclick="subscribeNL()">Subscribe →</button>
+    </div>
+    <p style="margin-top:0.75rem;font-size:0.68rem;color:rgba(255,255,255,0.3);">No spam, ever. Unsubscribe any time.</p>
+  </div>
+</section>
+
+<div id="footer-slot"></div>
+<script src="scripts/chrome.js"></script>
+<script>
+  MTR.injectChrome({ onDark: false });
+  function filterPosts(btn, cat) {
+    document.querySelectorAll('.ins-filter-pill').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.ins-card').forEach(card => {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+  function subscribeNL() {
+    const input = document.getElementById('nl-email');
+    if (input.value && input.value.includes('@')) {
+      input.value = '';
+      input.placeholder = 'You\'re in. Watch your inbox ✓';
+    }
+  }
+</script>
+</body>
+</html>
