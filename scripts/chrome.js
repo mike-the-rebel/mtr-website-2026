@@ -45,8 +45,8 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <a href="mailto:hello@miketherebel.com">hello@miketherebel.com</a>
-              <a href="#">Instagram</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://www.instagram.com/mike.therebel/">Instagram</a>
+              <a href="https://www.linkedin.com/in/miketherebel/">LinkedIn</a>
             </div>
             <div class="footer-col">
               <h4>Legal</h4>
