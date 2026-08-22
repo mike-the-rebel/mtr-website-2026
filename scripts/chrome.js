@@ -58,7 +58,7 @@
         </div>
         <div class="footer-bottom">
           <p class="footer-ack">I respectfully recognise all Aboriginal and Torres Strait Islander Traditional Custodians of Country and their continuing connection to land, sea, culture and community. I pay my respects to Elders past, present and emerging.</p>
-          <p class="footer-copy">© Mike the Rebel 2026 · ABN 25 168 857 084</p>
+          <p class="footer-copy">© Mike the Rebel 2026 /*· ABN 25 168 857 084*/</p>
         </div>
       </footer>
     `;
