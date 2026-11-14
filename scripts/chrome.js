@@ -45,8 +45,8 @@
             <div class="footer-col">
               <h4>Connect</h4>
               <a href="mailto:hello@miketherebel.com">hello@miketherebel.com</a>
-              <a href="https://www.instagram.com/mike.therebel/">Instagram</a>
-              <a href="https://www.linkedin.com/in/miketherebel/">LinkedIn</a>
+              <a href="https://www.instagram.com/mike.therebel/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.linkedin.com/in/miketherebel/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
             <div class="footer-col">
               <h4>Legal</h4>
@@ -126,6 +126,34 @@
         burger.addEventListener('click', () => nav.classList.toggle('menu-open'));
         nav.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('menu-open')));
         window.addEventListener('resize', () => { if (window.innerWidth > 860) nav.classList.remove('menu-open'); });
+      }
+
+      // Anchor links (e.g. About): scroll in-page instead of reloading, and
+      // re-anchor after fonts/images load so the section lands below the fixed nav.
+      function scrollToId(id, smooth) {
+        const el = id && document.getElementById(id);
+        if (!el) return false;
+        el.scrollIntoView({ behavior: smooth ? 'smooth' : 'instant', block: 'start' });
+        return true;
+      }
+      document.querySelectorAll('a[href*="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          let url;
+          try { url = new URL(a.getAttribute('href'), location.href); } catch (_) { return; }
+          const target = url.pathname.split('/').pop() || 'index.html';
+          const id = decodeURIComponent(url.hash.slice(1));
+          if (target !== currentPage() || !document.getElementById(id)) return;
+          e.preventDefault();
+          scrollToId(id, true);
+          try { history.replaceState(null, '', '#' + id); } catch (_) {}
+        });
+      });
+      if (location.hash) {
+        const id = decodeURIComponent(location.hash.slice(1));
+        const settle = () => scrollToId(id, false);
+        settle();
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
+        window.addEventListener('load', settle, { once: true });
       }
 
       // Reveal observer
