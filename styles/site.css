@@ -46,7 +46,7 @@ html[data-theme="dark"] {
   --nav-border:    rgba(255,255,255,0.07);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   background: var(--page-bg);
   color: var(--fg);
@@ -136,7 +136,7 @@ html[data-theme="dark"] .theme-toggle .tt-moon { display: none; }
 
 .nav-cta {
   background: var(--orange); color: var(--white) !important;
-  padding: 0.5rem 1.25rem;
+  padding: 0.5rem 1.25rem; white-space: nowrap;
   border-radius: 2px;
   letter-spacing: 0.1em;
   transition: background 0.2s;
