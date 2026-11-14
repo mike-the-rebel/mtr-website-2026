@@ -55,6 +55,7 @@
   display: flex; align-items: flex-end;
   background: var(--surface-dark2);
 }
+.project-card--wide { grid-column: 1 / -1; aspect-ratio: 21/9; }
 .project-card-bg {
   position: absolute; inset: 0;
   transition: transform 0.6s ease;
@@ -125,7 +126,7 @@
 @media (max-width: 860px) {
   .wi-hero { padding: 8rem 1.5rem 3rem; }
   .projects-grid { grid-template-columns: 1fr; }
-  .project-card { aspect-ratio: 16/9; }
+  .project-card, .project-card--wide { aspect-ratio: 16/9; }
   .work-cta-row { flex-direction: column; align-items: flex-start; padding: 4rem 1.5rem; gap: 2rem; }
 }
 </style>
@@ -144,9 +145,9 @@
     <p class="sec-label">Selected Work</p>
     <h1 class="wi-headline">
       Brands Built<br>
-      to <span class="accent">Move.</span>
+      to Move
     </h1>
-    <p class="wi-sub">A collection of brand systems, identities, and digital experiences built for founder-led businesses ready to stand out.</p>
+    <p class="wi-sub">Brand systems, identities, campaigns and e-commerce, from in-house work at Adrad to small businesses and self-directed projects.</p>
   </div>
 </section>
 
@@ -155,25 +156,27 @@
 <!-- PROJECTS -->
 <div class="projects-grid" id="projects-grid">
 
-  <a href="case-adulting-candle.html" class="project-card">
+  <!-- ADRAD: hidden until visual mockups are approved. Restore this card, renumber, and remove "project-card--wide" below.
+  <a href="case-adrad.html" class="project-card">
+    <div class="project-card-bg" style="background: linear-gradient(155deg,#1c1010 0%, #120a0a 50%, #060303 100%);"></div>
+    <div class="project-card-texture" style="background: radial-gradient(ellipse at 25% 30%, rgba(220,38,38,0.32) 0%, transparent 50%), radial-gradient(ellipse at 80% 75%, rgba(150,20,20,0.22) 0%, transparent 55%);"></div>
+    <div class="project-card-accent" style="background:#dc2626"></div>
+    <div class="project-card-num">01</div>
+    <div class="project-card-info">
+      <div class="project-card-tag">In-house · Campaigns · Systems</div>
+      <div class="project-card-title">Adrad <span class="project-card-arrow">→</span></div>
+    </div>
+  </a>
+  -->
+
+  <a href="case-adulting-candle.html" class="project-card project-card--wide">
     <div class="project-card-bg" style="background-image:url('assets/case-studies/Adulting Candle/gallery-1.jpg');background-size:cover;background-position:center 30%;"></div>
     <div class="project-card-texture" style="background: linear-gradient(to top, rgba(20,10,30,0.7) 0%, rgba(20,10,30,0.1) 55%, transparent 100%);"></div>
     <div class="project-card-accent" style="background:#7c3aed"></div>
     <div class="project-card-num">01</div>
     <div class="project-card-info">
-      <div class="project-card-tag">Brand Identity · Packaging · Social</div>
+      <div class="project-card-tag">Naming · Identity · E-commerce</div>
       <div class="project-card-title">Adulting Candle Co <span class="project-card-arrow">→</span></div>
-    </div>
-  </a>
-
-  <a href="case-mile-high.html" class="project-card">
-    <div class="project-card-bg" style="background-image:url('assets/case-studies/mile-high/hero.jpg');background-size:cover;background-position:center;"></div>
-    <div class="project-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
-    <div class="project-card-accent" style="background:#d95f20"></div>
-    <div class="project-card-num">02</div>
-    <div class="project-card-info">
-      <div class="project-card-tag">Brand Identity · Packaging · Strategy</div>
-      <div class="project-card-title">Mile High Coffee Club <span class="project-card-arrow">→</span></div>
     </div>
   </a>
 
@@ -181,10 +184,21 @@
     <div class="project-card-bg" style="background-image:url('assets/case-studies/mood-hair/hero.jpg');background-size:cover;background-position:center;"></div>
     <div class="project-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
     <div class="project-card-accent" style="background:#dba0b8"></div>
+    <div class="project-card-num">02</div>
+    <div class="project-card-info">
+      <div class="project-card-tag">Discovery · Positioning · Identity</div>
+      <div class="project-card-title">Mood Hair Studio <span class="project-card-arrow">→</span></div>
+    </div>
+  </a>
+
+  <a href="case-mile-high.html" class="project-card">
+    <div class="project-card-bg" style="background-image:url('assets/case-studies/mile-high/hero.jpg');background-size:cover;background-position:center;"></div>
+    <div class="project-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
+    <div class="project-card-accent" style="background:#d95f20"></div>
     <div class="project-card-num">03</div>
     <div class="project-card-info">
-      <div class="project-card-tag">Visual Identity · Merchandise · Web</div>
-      <div class="project-card-title">Mood Hair Studio <span class="project-card-arrow">→</span></div>
+      <div class="project-card-tag">Self-directed · Identity · Packaging</div>
+      <div class="project-card-title">Mile High Coffee Club <span class="project-card-arrow">→</span></div>
     </div>
   </a>
 

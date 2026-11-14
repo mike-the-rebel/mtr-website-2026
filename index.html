@@ -7,8 +7,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mike Moreno | Brand Strategist & Graphic Designer in Adelaide</title>
-<meta name="description" content="Mike Moreno is a graphic designer and brand strategist in Adelaide, Australia, working with growing businesses across manufacturing, hospitality, and product brands.">
+<title>Mike Moreno | Brand &amp; Digital Designer in Adelaide</title>
+<meta name="description" content="Mike Moreno is a brand and digital designer in Adelaide, Australia, working across strategy, identity, campaigns and e-commerce.">
 <link rel="icon" href="assets/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles/site.css">
@@ -30,7 +30,7 @@
   overflow: hidden;
 }
 html[data-theme="dark"] .hero-left { background: transparent; }
-.hero-left::before {
+.hero-left::before { display: none;
   content: ''; position: absolute; inset: 0;
   background-image: var(--grain); background-size: 220px 220px;
   opacity: 0.045; mix-blend-mode: multiply; pointer-events: none;
@@ -39,19 +39,19 @@ html[data-theme="dark"] .hero-left::before { mix-blend-mode: overlay; opacity: 0
 .hero-left-inner { position: relative; z-index: 2; }
 .hero-seam { display: none; }
 .hero-tag {
-  display: inline-flex; align-items: center; gap: 0.7rem;
+  display: inline-flex; align-items: center; gap: 0.5rem 0.7rem; flex-wrap: wrap;
   margin-bottom: 1.75rem;
 }
 .hero-tag-pill {
   background: var(--orange); color: var(--white);
   font-size: 0.66rem; font-weight: 600;
   letter-spacing: 0.13em; text-transform: uppercase;
-  padding: 0.35rem 0.85rem; border-radius: 2px;
+  padding: 0.35rem 0.85rem; border-radius: 2px; white-space: nowrap;
 }
 .hero-tag-label {
   font-size: 0.72rem; color: var(--fg-soft);
   letter-spacing: 0.13em; text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 500; white-space: nowrap;
 }
 .hero-headline {
   font-family: var(--bio);
@@ -90,11 +90,10 @@ html[data-theme="dark"] .hero-left::before { mix-blend-mode: overlay; opacity: 0
 
 .hero-right {
   position: relative; overflow: hidden;
-  border-radius: 12px;
   min-height: 420px;
-  background: linear-gradient(160deg, var(--charcoal-soft) 0%, #1c1712 55%, #100d09 100%);
+  background: transparent;
   display: flex; align-items: flex-end; justify-content: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 .hero-portrait-glow {
   position: absolute; z-index: 2; left: 50%; bottom: 6%;
@@ -103,7 +102,8 @@ html[data-theme="dark"] .hero-left::before { mix-blend-mode: overlay; opacity: 0
   background: radial-gradient(ellipse, rgba(217,95,32,0.28) 0%, transparent 70%);
   filter: blur(6px);
 }
-.hero-right::before {
+.hero-right::before { display: none; }
+.hero-right-unused::before {
   content: ''; position: absolute; inset: 0; z-index: 1;
   background-image: var(--grain); background-size: 220px 220px;
   opacity: 0.06; mix-blend-mode: overlay; pointer-events: none;
@@ -114,7 +114,7 @@ html[data-theme="dark"] .hero-left::before { mix-blend-mode: overlay; opacity: 0
   height: 92%; width: auto;
   right: 5%; bottom: 0;
   object-fit: contain; object-position: bottom;
-  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.45));
+  filter: none;
 }
 .hero-texture {
   position: absolute; z-index: 2; inset: 0; pointer-events: none;
@@ -122,6 +122,7 @@ html[data-theme="dark"] .hero-left::before { mix-blend-mode: overlay; opacity: 0
   opacity: 0.16; mix-blend-mode: overlay;
 }
 html[data-theme="dark"] .hero-texture { opacity: 0.13; }
+.hero-portrait-float { display: none; }
 
 /* ── STAT STRIP ── */
 .stat-strip {
@@ -178,7 +179,7 @@ html[data-theme="dark"] .hero-texture { opacity: 0.13; }
   letter-spacing: -0.015em;
 }
 .work-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
+  display: grid; grid-template-columns: repeat(2,1fr);
   gap: 2px; background: rgba(255,255,255,0.05);
 }
 .work-card {
@@ -188,6 +189,7 @@ html[data-theme="dark"] .hero-texture { opacity: 0.13; }
   background: var(--charcoal);
   text-decoration: none;
 }
+.work-card--wide { grid-column: 1 / -1; aspect-ratio: 21/9; }
 .work-card-layer {
   position: absolute; inset: 0;
   transition: transform 0.55s ease;
@@ -267,23 +269,28 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
 
 /* ── MOBILE ── */
 @media (max-width: 1080px) {
-  .work-grid { grid-template-columns: repeat(2,1fr); }
 }
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding: 6.5rem 1.5rem 0; gap: 2rem; }
-  .hero-left { padding: 0 0 2rem; }
-  .hero-right { min-height: 320px; overflow: hidden; margin-bottom: 2rem; }
-  .hero-portrait-img { height: 88%; right: 3%; }
+  .hero { display: block; min-height: auto; padding: 6.5rem 1.5rem 0; }
+  .hero-left { padding: 0; }
+  .hero-left-inner { display: flow-root; }
+  .hero-right { display: none; }
+  .hero-portrait-float { display: none; }
+  .hero-availability { margin-bottom: 2rem; }
   .hero-portrait-glow { width: 80%; height: 70px; bottom: 4%; }
   .stat { padding: 1.1rem 1.25rem; }
   .stat-num { font-size: 1.5rem; }
   .about { grid-template-columns: 1fr; padding: 5rem 1.5rem; gap: 2.5rem; }
   .work { padding: 5rem 1.5rem; }
   .work-grid { grid-template-columns: 1fr; }
+  .work-card--wide { aspect-ratio: 4/3; }
   .work-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
   .how-it-works { padding: 5rem 1.5rem; }
   .hiw-grid { grid-template-columns: 1fr 1fr; }
   .contact { padding: 5rem 1.5rem; }
+}
+@media (max-width: 560px) {
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
 }
 </style>
 </head>
@@ -299,24 +306,23 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
 <section class="hero">
   <div class="hero-left">
     <div class="hero-left-inner">
+      <img src="assets/photos/mike-hero-cropped.png" alt="" aria-hidden="true" class="hero-portrait-float">
       <div class="hero-tag">
         <span class="hero-tag-pill">Adelaide, Australia</span>
-        <span class="hero-tag-label">→ Working Worldwide</span>
+        <span class="hero-tag-label">→ Brand &amp; Digital Designer</span>
       </div>
-      <h1 class="hero-headline">Design for <span class="accent">Growing Businesses.</span></h1>
-      <p class="hero-sub">I help growing businesses figure out what makes them different, then build the brand identity, website and campaigns around it.</p>
+      <h1 class="hero-headline">Brand &amp; Digital <span class="accent">Systems That Scale</span></h1>
+      <p class="hero-sub">Strategy, identity, campaigns and platforms. Turning brand chaos into clarity across print, digital and e-commerce.</p>
       <div class="hero-actions">
         <a href="work.html" class="btn btn-primary">Explore the Work</a>
         <a href="mailto:hello@miketherebel.com" class="hero-secondary-link">Start a Project →</a>
       </div>
-      <div class="hero-availability"><span class="hero-availability-dot"></span>2 Project Spots Available This Quarter</div>
+      <div class="hero-availability"><span class="hero-availability-dot"></span>1 Project Spot Available for December 26'</div>
     </div>
   </div>
   <div class="hero-seam"></div>
   <div class="hero-right">
-    <div class="hero-texture"></div>
-    <div class="hero-portrait-glow"></div>
-    <img src="assets/photos/mike-hero-cropped.png" alt="Mike Moreno, brand strategist" class="hero-portrait-img">
+    <img src="assets/photos/mike-hero-cropped.png" alt="Mike Moreno, brand and digital designer" class="hero-portrait-img">
   </div>
 </section>
 
@@ -361,29 +367,30 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
       <p class="sec-label">Selected Work</p>
       <h2 class="work-headline" style="margin-top:1rem;">
         From Still Waters<br>
-        to Brands That<br>
-        <span class="accent">Move.</span>
+        to Brands That Move
       </h2>
     </div>
     <a href="work.html" class="btn btn-ghost" style="white-space: nowrap;">View All Cases →</a>
   </div>
   <div class="work-grid">
-    <a href="case-adulting-candle.html" class="work-card">
+    <!-- ADRAD: hidden until visual mockups are approved. Restore this card and remove "work-card--wide" below.
+    <a href="case-adrad.html" class="work-card">
+      <div class="work-card-layer" style="background: linear-gradient(155deg,#1c1010 0%, #120a0a 50%, #060303 100%);"></div>
+      <div class="work-card-texture" style="background: radial-gradient(ellipse at 25% 30%, rgba(220,38,38,0.32) 0%, transparent 50%), radial-gradient(ellipse at 80% 75%, rgba(150,20,20,0.22) 0%, transparent 55%);"></div>
+      <div class="work-card-accent-bar" style="background: #dc2626;"></div>
+      <div class="work-card-info">
+        <div class="work-card-tag">In-house · Campaigns · Systems</div>
+        <div class="work-card-title">Adrad <span class="arrow">→</span></div>
+      </div>
+    </a>
+    -->
+    <a href="case-adulting-candle.html" class="work-card work-card--wide">
       <div class="work-card-layer" style="background-image:url('assets/case-studies/Adulting Candle/gallery-1.jpg');background-size:cover;background-position:center 30%;"></div>
       <div class="work-card-texture" style="background: linear-gradient(to top, rgba(20,10,30,0.7) 0%, rgba(20,10,30,0.1) 55%, transparent 100%);"></div>
       <div class="work-card-accent-bar" style="background: #7c3aed;"></div>
       <div class="work-card-info">
-        <div class="work-card-tag">Brand Identity · Packaging</div>
+        <div class="work-card-tag">Naming · Identity · E-commerce</div>
         <div class="work-card-title">Adulting Candle Co <span class="arrow">→</span></div>
-      </div>
-    </a>
-    <a href="case-mile-high.html" class="work-card">
-      <div class="work-card-layer" style="background-image:url('assets/case-studies/mile-high/hero.jpg');background-size:cover;background-position:center;"></div>
-      <div class="work-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
-      <div class="work-card-accent-bar" style="background: #d95f20;"></div>
-      <div class="work-card-info">
-        <div class="work-card-tag">Brand Identity · Packaging</div>
-        <div class="work-card-title">Mile High Coffee Club <span class="arrow">→</span></div>
       </div>
     </a>
     <a href="case-mood-hair.html" class="work-card">
@@ -391,8 +398,17 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
       <div class="work-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
       <div class="work-card-accent-bar" style="background: #dba0b8;"></div>
       <div class="work-card-info">
-        <div class="work-card-tag">Visual Identity · Merchandise</div>
+        <div class="work-card-tag">Discovery · Positioning · Identity</div>
         <div class="work-card-title">Mood Hair Studio <span class="arrow">→</span></div>
+      </div>
+    </a>
+    <a href="case-mile-high.html" class="work-card">
+      <div class="work-card-layer" style="background-image:url('assets/case-studies/mile-high/hero.jpg');background-size:cover;background-position:center;"></div>
+      <div class="work-card-texture" style="background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);"></div>
+      <div class="work-card-accent-bar" style="background: #d95f20;"></div>
+      <div class="work-card-info">
+        <div class="work-card-tag">Self-directed · Identity · Packaging</div>
+        <div class="work-card-title">Mile High Coffee Club <span class="arrow">→</span></div>
       </div>
     </a>
   </div>
@@ -402,12 +418,11 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
 <section class="about reveal" id="about">
   <div>
     <p class="sec-label">The Approach</p>
-    <blockquote class="about-quote" style="margin-top:1.5rem;">"I don't believe in decorating businesses. I believe in understanding them well enough to say why someone should choose them."</blockquote>
+    <blockquote class="about-quote" style="margin-top:1.5rem;">"I want people to know why they'd choose you before they notice how it looks."</blockquote>
   </div>
   <div class="about-body">
-    <p>I'm Mike, an American designer living in Australia. I don't think the strongest brands come from chasing trends. They come from actually understanding the people you're trying to reach.</p>
-    <p>I've worked with manufacturers, hospitality brands, product companies and startups across Australia and the US, usually starting with the same question: what makes this business different, and does anything about how it looks or sounds actually say that?</p>
-    <p>I'm involved from that first conversation through to the final pixel. I'd rather do the thinking myself than hand it off, so nothing gets lost between the strategy and the design.</p>
+    <p>I'm Mike, an American brand and digital designer based in Adelaide. In-house at Adrad Holdings, I build the catalogue systems, campaigns, email templates and tracking the marketing team runs on.</p>
+    <p>Outside of that I work with small businesses and on my own projects across naming, identity, packaging and Shopify builds. I'm involved from the first conversation to the final pixel, so nothing gets lost between strategy and design.</p>
     <div style="margin-top: 2rem;">
       <a href="mailto:hello@miketherebel.com" class="btn btn-primary">Get in Touch</a>
     </div>
@@ -418,7 +433,7 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
 <section class="how-it-works reveal" id="how-i-work">
   <div class="hiw-intro">
     <p class="sec-label">How I Work</p>
-    <h2 class="hiw-headline">From First Email<br>to <span class="accent">Launch Day.</span></h2>
+    <h2 class="hiw-headline">From Discovery<br>to Launch</h2>
   </div>
   <div class="hiw-grid">
     <div class="hiw-step">
@@ -447,7 +462,7 @@ html[data-theme="dark"] .hiw-num { color: rgba(255,255,255,0.08); }
 <!-- CONTACT -->
 <section class="contact reveal on-dark" id="contact">
   <p class="sec-label">Get in Touch</p>
-  <h2 class="contact-headline">Ready to Build a Brand<br>People <span class="accent">Remember?</span></h2>
+  <h2 class="contact-headline">Ready to Build a Brand<br>People Remember?</h2>
   <p class="contact-sub">For project enquiries, collaborations, or just to say hello, drop me a line directly.</p>
   <a href="mailto:hello@miketherebel.com" class="contact-email">hello@miketherebel.com</a>
 </section>
