@@ -2,7 +2,7 @@
 (function() {
   const navLinks = [
     { href: 'work.html', label: 'Work', match: /^(work\.html|case-.*\.html)$/ },
-    { href: 'index.html#about', label: 'About', match: /__never__/ },
+    { href: './#about', label: 'About', match: /__never__/ },
   ];
 
   function currentPage() {
@@ -17,7 +17,7 @@
     }).join('');
     return `
       <nav class="site-nav${onDark ? ' on-dark' : ''}">
-        <a class="nav-logo" href="index.html"><span>Mike</span><span>the</span><span class="accent">Rebel</span></a>
+        <a class="nav-logo" href="./"><span>Mike</span><span>the</span><span class="accent">Rebel</span></a>
         <ul class="nav-links">
           ${items}
           <li><a href="mailto:hello@miketherebel.com" class="nav-cta">Get in Touch</a></li>
@@ -39,7 +39,7 @@
           <div class="footer-links">
             <div class="footer-col">
               <h4>Navigate</h4>
-              <a href="index.html">Home</a>
+              <a href="./">Home</a>
               <a href="work.html">Work</a>
             </div>
             <div class="footer-col">
